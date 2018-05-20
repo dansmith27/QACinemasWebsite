@@ -25,35 +25,30 @@
           Avengers: Infinity War
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a onclick="updateFunc('Avengers: Infinity War')" class="dropdown-item" href="javascript:;">Avengers: Infinity War</a>
-          <a onclick="updateFunc('Deadpool 2')" class="dropdown-item" href="javascript:;">DeadPool 2</a>
-          <a onclick="updateFunc('Jurassic World: Fallen Kingdom')" class="dropdown-item" href="javascript:;">Jurassic World: Fallen Kingdom</a>
+          <a onclick="updateFunc('Avengers: Infinity War', 0)" class="dropdown-item" href="javascript:;">Avengers: Infinity War</a>
+          <a onclick="updateFunc('Deadpool 2', 1)" class="dropdown-item" href="javascript:;">DeadPool 2</a>
+          <a onclick="updateFunc('Jurassic World: Fallen Kingdom', 2)" class="dropdown-item" href="javascript:;">Jurassic World: Fallen Kingdom</a>
         </div>
       </div>
 
       <h2>Please select the day you wish to visit:</h2>
 
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button onclick="updateDay('Mon')" type="button" class="btn btn-secondary">Monday</button>
-        <button onclick="updateDay('Tue')" type="button" class="btn btn-secondary">Tuesday</button>
-        <button onclick="updateDay('Wed')" type="button" class="btn btn-secondary">Wednesday</button>
-        <button onclick="updateDay('Thu')" type="button" class="btn btn-secondary">Thursday</button>
-        <button onclick="updateDay('Fri')" type="button" class="btn btn-secondary">Friday</button>
-        <button onclick="updateDay('Sat')" type="button" class="btn btn-secondary">Saturday</button>
-        <button onclick="updateDay('Sun')" type="button" class="btn btn-secondary">Sunday</button>
+        <button onclick="updateDay(0)" type="button" class="btn btn-secondary">Monday</button>
+        <button onclick="updateDay(1)" type="button" class="btn btn-secondary">Tuesday</button>
+        <button onclick="updateDay(2)" type="button" class="btn btn-secondary">Wednesday</button>
+        <button onclick="updateDay(3)" type="button" class="btn btn-secondary">Thursday</button>
+        <button onclick="updateDay(4)" type="button" class="btn btn-secondary">Friday</button>
+        <button onclick="updateDay(5)" type="button" class="btn btn-secondary">Saturday</button>
+        <button onclick="updateDay(6)" type="button" class="btn btn-secondary">Sunday</button>
       </div>
 
       <h2>Please enter the time of your visit:</h2>
 
-      <div class="radio">
+      <div class="radio" id="radio">
         <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
         <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
         <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
-      </div>
-      <div class="radio">
-        <label class="radio-inline"><input type="radio" name="optradio">Option 4</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Option 5</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Option 6</label>
       </div>
 
       <h2>Select your tickets:</h2>
@@ -65,12 +60,12 @@
         <h3>Adult:</h3>
         </td>
         <td class="ticketBtn">
-			     <span class="input-group-btn" id="adMinus">
-						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
-			     </span>
-		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
 			     <span class="input-group-btn">
-							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+						    <button class="btn btn-white btn-minuse" id="adMinus" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" id="adVal" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" id="adPlus" type="button"><span class="fa fa-plus"></span></button>
 	  	     </span>
          </td>
       </div><!-- /input-group -->
@@ -82,12 +77,12 @@
         <h3>OAP:</h3>
         </td>
         <td class="ticketBtn">
-			     <span class="input-group-btn" id="oapMinus">
-						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
+			     <span class="input-group-btn" >
+						    <button class="btn btn-white btn-minuse" id="oapMinus"  type="button"><span class="fa fa-minus"></span></button>
 			     </span>
-		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+		       <input type="text" id="oapVal" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
 			     <span class="input-group-btn">
-							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+							<button class="btn btn-red btn-pluss" id="oapPlus" type="button"><span class="fa fa-plus"></span></button>
 	  	     </span>
          </td>
       </div><!-- /input-group -->
@@ -99,12 +94,12 @@
         <h3>Student:</h3>
         </td>
         <td class="ticketBtn">
-			     <span class="input-group-btn" id="studMinus">
-						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
-			     </span>
-		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
 			     <span class="input-group-btn">
-							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+						    <button class="btn btn-white btn-minuse" id="studMinus" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" id="studVal" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" id="studPlus" type="button"><span class="fa fa-plus"></span></button>
 	  	     </span>
          </td>
       </div><!-- /input-group -->
@@ -115,12 +110,12 @@
         <h3>Child:</h3>
         </td>
         <td class="ticketBtn">
-			     <span class="input-group-btn" id="chidMinus">
-						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
-			     </span>
-		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
 			     <span class="input-group-btn">
-							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+						    <button class="btn btn-white btn-minuse" id="childMinus" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" id="childVal" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" id="childPlus" type="button"><span class="fa fa-plus"></span></button>
 	  	     </span>
          </td>
       </div><!-- /input-group -->
@@ -133,11 +128,12 @@
 
 
 
-    <!-- Optional JavaScript -->
-    <script src="./ticketCalc.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="./ticketCalc.js"></script>
   </body>
 </html>
