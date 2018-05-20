@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 
     <title>QA Cinemas</title>
@@ -14,29 +15,92 @@
   <body>
     <h1>QA Cinemas</h1>
 
-    <h2>Please select the film you wish to book:</h2>
+    <div id="content">
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Film
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Avengers: Infinity War</a>
-        <a class="dropdown-item" href="#">DeadPool 2</a>
-        <a class="dropdown-item" href="#">Jurassic World: Fallen Kingdom</a>
+      <h2>Please select the film you wish to book:</h2>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Film
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Avengers: Infinity War</a>
+          <a class="dropdown-item" href="#">DeadPool 2</a>
+          <a class="dropdown-item" href="#">Jurassic World: Fallen Kingdom</a>
+        </div>
       </div>
-    </div>
 
-    <h3>Please select the day you wish to book:</h3>
+      <h2>Please select the day you wish to visit:</h2>
 
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">Monday</button>
-      <button type="button" class="btn btn-secondary">Tuesday</button>
-      <button type="button" class="btn btn-secondary">Wednesday</button>
-      <button type="button" class="btn btn-secondary">Thursday</button>
-      <button type="button" class="btn btn-secondary">Friday</button>
-      <button type="button" class="btn btn-secondary">Saturday</button>
-      <button type="button" class="btn btn-secondary">Sunday</button>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Monday</button>
+        <button type="button" class="btn btn-secondary">Tuesday</button>
+        <button type="button" class="btn btn-secondary">Wednesday</button>
+        <button type="button" class="btn btn-secondary">Thursday</button>
+        <button type="button" class="btn btn-secondary">Friday</button>
+        <button type="button" class="btn btn-secondary">Saturday</button>
+        <button type="button" class="btn btn-secondary">Sunday</button>
+      </div>
+
+      <h2>Please enter the time of your visit:</h2>
+
+      <div class="radio">
+        <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+      </div>
+      <div class="radio">
+        <label class="radio-inline"><input type="radio" name="optradio">Option 4</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Option 5</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Option 6</label>
+      </div>
+
+      <h2>Select your tickets:</h2>
+
+      <div class="input-group" style="width:50%">
+        <h3>Adult:</h3>
+			     <span class="input-group-btn" id="adMinus">
+						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+	  	     </span>
+      </div><!-- /input-group -->
+
+      <div class="input-group" style="width:50%">
+        <h3>OAP:</h3>
+			     <span class="input-group-btn" id="oapMinus">
+						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+	  	     </span>
+      </div><!-- /input-group -->
+
+      <div class="input-group" style="width:50%">
+        <h3>Student:</h3>
+			     <span class="input-group-btn" id="studMinus">
+						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+	  	     </span>
+      </div><!-- /input-group -->
+
+      <div class="input-group" style="width:50%">
+        <h3>Child:</h3>
+			     <span class="input-group-btn" id="chidMinus">
+						    <button class="btn btn-white btn-minuse" type="button"><span class="fa fa-minus"></span></button>
+			     </span>
+		       <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0" disabled="true">
+			     <span class="input-group-btn">
+							<button class="btn btn-red btn-pluss" type="button"><span class="fa fa-plus"></span></button>
+	  	     </span>
+      </div><!-- /input-group -->
+
     </div>
 
     <!-- Optional JavaScript -->
