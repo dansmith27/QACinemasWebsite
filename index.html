@@ -19,27 +19,28 @@
 
       <h2>Please select the film you wish to book:</h2>
 
+
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Film
+          Avengers: Infinity War
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Avengers: Infinity War</a>
-          <a class="dropdown-item" href="#">DeadPool 2</a>
-          <a class="dropdown-item" href="#">Jurassic World: Fallen Kingdom</a>
+          <a onclick="updateFunc('Avengers: Infinity War')" class="dropdown-item" href="javascript:;">Avengers: Infinity War</a>
+          <a onclick="updateFunc('Deadpool 2')" class="dropdown-item" href="javascript:;">DeadPool 2</a>
+          <a onclick="updateFunc('Jurassic World: Fallen Kingdom')" class="dropdown-item" href="javascript:;">Jurassic World: Fallen Kingdom</a>
         </div>
       </div>
 
       <h2>Please select the day you wish to visit:</h2>
 
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Monday</button>
-        <button type="button" class="btn btn-secondary">Tuesday</button>
-        <button type="button" class="btn btn-secondary">Wednesday</button>
-        <button type="button" class="btn btn-secondary">Thursday</button>
-        <button type="button" class="btn btn-secondary">Friday</button>
-        <button type="button" class="btn btn-secondary">Saturday</button>
-        <button type="button" class="btn btn-secondary">Sunday</button>
+        <button onclick="updateDay('Mon')" type="button" class="btn btn-secondary">Monday</button>
+        <button onclick="updateDay('Tue')" type="button" class="btn btn-secondary">Tuesday</button>
+        <button onclick="updateDay('Wed')" type="button" class="btn btn-secondary">Wednesday</button>
+        <button onclick="updateDay('Thu')" type="button" class="btn btn-secondary">Thursday</button>
+        <button onclick="updateDay('Fri')" type="button" class="btn btn-secondary">Friday</button>
+        <button onclick="updateDay('Sat')" type="button" class="btn btn-secondary">Saturday</button>
+        <button onclick="updateDay('Sun')" type="button" class="btn btn-secondary">Sunday</button>
       </div>
 
       <h2>Please enter the time of your visit:</h2>
@@ -133,6 +134,7 @@
 
 
     <!-- Optional JavaScript -->
+    <script src="./ticketCalc.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
