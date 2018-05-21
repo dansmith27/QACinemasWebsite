@@ -2,6 +2,11 @@ var returnedJson
 var selectedMov = 0;
 var selectedDay = 0;
 
+var adultCost = 8;
+var oapCost = 6;
+var studentCost = 6;
+var childCost = 4;
+
 function updateFunc(curMov, id) {
   //console.log(curMov);
   document.getElementById("dropdownMenuButton").innerHTML= curMov;
@@ -57,6 +62,8 @@ function updateTimes() {
   document.getElementById("radio").innerHTML = outPut;
 }
 
+
+
 $( document ).ready(function() {
   jQuery.ajaxSetup({async:false});
   $.getJSON('http://localhost:3000/Movies', function(data) {
@@ -70,20 +77,23 @@ $( document ).ready(function() {
       outPut += "<label class='radio-inline'><input type='radio' name='optradio'>" + returnedJson[0].day.mon[i] + "</label>";
   }
   document.getElementById("radio").innerHTML = outPut;
+}
+)
 
-  $( "#adMinus" ).click(function() {
+$( "#adMinus" ).click(function() {
     document.getElementById("adVal").value -= 1;
     if (document.getElementById("adVal").value < 0) {
-      document.getElementById("adVal").value = 0
+      document.getElementById("adVal").value = 0;
     }
-  });
+});
 
-  $( "#adPlus" ).click(function() {
-    document.getElementById("adVal").value = parseInt(document.getElementById("adVal").value) + 1;
-    if (document.getElementById("adVal").value > 20) {
-      document.getElementById("adVal").value = 20
-    }
-  });
+
+$( "#adPlus" ).click(function() {
+  document.getElementById("adVal").value = parseInt(document.getElementById("adVal").value) + 1;
+  if (document.getElementById("adVal").value > 20) {
+    document.getElementById("adVal").value = 20
+  }
+});
 
   $( "#oapMinus" ).click(function() {
     document.getElementById("oapVal").value -= 1;
@@ -126,7 +136,42 @@ $( document ).ready(function() {
       document.getElementById("childVal").value = 20
     }
   });
+
+
+  function totalCalc() {
+    var totalCost;
+    var cost = 0;
+    console.log(cost);
+    if (selectedDay == 2) {
+      console.log($('#adVal').val());
+      if (parseInt($('#adVal').val()) != 0){
+        cost = (parseInt(cost) + parseInt($('#adVal').val()) * parseInt(adultCost - 2));
+        console.log(cost);
+      }
+      if(parseInt($('#oapVal').val()) != 0) {
+        cost = parseInt(cost) + parseInt($('#oapVal').val()) * parseInt(oapCost - 2);
+      }
+      if(parseInt($('#studVal').val()) != 0) {
+        cost = parseInt(cost) + parseInt($('#studVal').val()) * parseInt(studentCost - 2);
+      }
+      if(parseInt($('#child').val()) != 0) {
+        cost = cost + parseInt($('#childVal').val()) * parseInt(childVal - 2);
+      }
+      cost = parseInt(cost);
+      console.log(cost);
+      console.log(parseInt(document.getElementById("adVal").value) * (adultCost - 2));
+      console.log(cost);
+    }
+    else {
+      cost += parseInt(document.getElementById("adVal").value) * (adultCost);
+      cost += parseInt(document.getElementById("oapVal").value) * (oapCost);
+      cost += parseInt(document.getElementById("studVal").value) * (studentCost);
+      cost += parseInt(document.getElementById("childVal").value) * (childVal);
+    }
+    console.log("The Total cost is: £");
+    document.getElementById("total").innerHTML = cost;
+
+  }
   //console.log(returnedJson[0].Title);
   //console.log(returnedJson[0].day.fri[0]);
   //console.log(returnedJson[0].day.fri.length);
-});
